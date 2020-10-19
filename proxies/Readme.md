@@ -9,4 +9,4 @@ Los proxies, son un nuevo tipo de objetos que fueron introducidos en el estandar
 - La Trampa que es el metodo que provee acceso a las propiedades.
 
 
-### Vease el archivo index para ver una implementacion de la misma.
+### Vease las implementaciones de ejemplo en los archivos `example-1.js` y `example-2.js`
