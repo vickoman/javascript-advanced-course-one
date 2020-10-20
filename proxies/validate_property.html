@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulate The OBjct Date</title>
+</head>
+<body>
+    <script  type="text/javascript">
+        const miProxy = new Proxy({}, {
+            set( target, prop, value ) {
+                if ( prop == "edad" && !Number.isInteger( value )) {
+                    throw new Error("El valor de la edad no es valido");
+                }
+
+                if (prop == "fecha" && !/^(0?[1-0]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])[\/](19|20)\d{2}$/.test( value )) {
+                   throw new Error("El valor de la fecha no es valido");
+                }
+                return target[prop] = value
+            }
+        })
+
+    </script>
+</body>
+</html>
