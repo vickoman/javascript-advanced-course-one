@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulate The OBjct Date</title>
+</head>
+<body>
+    <script  type="text/javascript">
+        let fecha  = new Date();
+        let miProxyFecha = new Proxy(fecha, {
+            get: function( target, prop, proxy ) {
+                if (prop === "format") {
+                    return `${target.getDate()}/${target.getMonth()}/${target.getYear()}`;
+                } else {
+                    return target[prop];
+                }
+            }
+        });
+    </script>
+</body>
+</html>
